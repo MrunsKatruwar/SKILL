@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Form with Validation</title>
+  <style>
+    body {
+      font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8, #E6E6FA);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: lavender;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      width: 400px;
+      animation: fadeIn 1s ease-in-out;
+      color: #333;
+      overflow-y: auto;
+      max-height: 95vh;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4B0082;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: #4B0082;
+      display: block;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      transition: 0.3s;
+      outline: none;
+      font-family: "Lucida Sans", sans-serif;
+    }
+
+    input[type="text"]:focus {
+      border-color: #9370db;
+      box-shadow: 0 0 6px rgba(147, 112, 219, 0.6);
+    }
+
+    .options {
+      margin-bottom: 15px;
+    }
+
+    .options div {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+    }
+
+    .options input[type="radio"],
+    .options input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .options label {
+      font-weight: normal;
+      color: #333;
+      margin: 0;
+      display: inline;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background: linear-gradient(135deg, #b57edc, #9370db);
+      border: none;
+      color: white;
+      font-size: 16px;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #9370db, #b57edc);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+ <form id="regForm" action="file:///C:/Users/mrunm/OneDrive/Documents/SubmitCSS.html">
+  <div class="form-container">
+    <h2>Register!</h2>
+    <form id="surveyForm">
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname" required>
+
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" required>
+
+      <label>Favorite Color:</label>
+      <div class="options">
+        <div><input type="radio" id="red" name="color" value="Red"><label for="red">Red</label></div>
+        <div><input type="radio" id="blue" name="color" value="Blue"><label for="blue">Blue</label></div>
+        <div><input type="radio" id="green" name="color" value="Green"><label for="green">Green</label></div>
+        <div><input type="radio" id="purple" name="color" value="Purple"><label for="purple">Purple</label></div>
+      </div>
+
+      <label>Favorite Coding Language:</label>
+      <div class="options">
+        <div><input type="radio" id="html" name="language" value="HTML"><label for="html">HTML</label></div>
+        <div><input type="radio" id="css" name="language" value="CSS"><label for="css">CSS</label></div>
+        <div><input type="radio" id="js" name="language" value="JavaScript"><label for="js">JavaScript</label></div>
+        <div><input type="radio" id="python" name="language" value="Python"><label for="python">Python</label></div>
+      </div>
+
+      <label>Favorite Subject:</label>
+      <div class="options">
+        <div><input type="radio" id="maths" name="subject" value="Maths"><label for="maths">Maths</label></div>
+        <div><input type="radio" id="science" name="subject" value="Science"><label for="science">Science</label></div>
+        <div><input type="radio" id="it" name="subject" value="IT"><label for="it">IT</label></div>
+        <div><input type="radio" id="english" name="subject" value="English"><label for="english">English</label></div>
+      </div>
+
+      <label>Favorite Food:</label>
+      <div class="options">
+        <div><input type="radio" id="pizza" name="food" value="Pizza"><label for="pizza">Pizza</label></div>
+        <div><input type="radio" id="pasta" name="food" value="Pasta"><label for="pasta">Pasta</label></div>
+        <div><input type="radio" id="burger" name="food" value="Burger"><label for="burger">Burger</label></div>
+        <div><input type="radio" id="sushi" name="food" value="Sushi"><label for="sushi">Sushi</label></div>
+      </div>
+
+      <label>Hobbies (choose multiple):</label>
+      <div class="options">
+        <div><input type="checkbox" id="reading" name="hobby" value="Reading"><label for="reading">Reading</label></div>
+        <div><input type="checkbox" id="sports" name="hobby" value="Sports"><label for="sports">Sports</label></div>
+        <div><input type="checkbox" id="music" name="hobby" value="Music"><label for="music">Music</label></div>
+        <div><input type="checkbox" id="travel" name="hobby" value="Travel"><label for="travel">Travel</label></div>
+      </div>
+
+      <label>Preferred Devices (choose multiple):</label>
+      <div class="options">
+        <div><input type="checkbox" id="laptop" name="device" value="Laptop"><label for="laptop">Laptop</label></div>
+        <div><input type="checkbox" id="mobile" name="device" value="Mobile"><label for="mobile">Mobile</label></div>
+        <div><input type="checkbox" id="tablet" name="device" value="Tablet"><label for="tablet">Tablet</label></div>
+        <div><input type="checkbox" id="desktop" name="device" value="Desktop"><label for="desktop">Desktop</label></div>
+      </div>
+
+      <div id="errorMessages" class="error"></div>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("surveyForm").addEventListener("submit", function(event) {
+      let errors = [];
+
+      if (!document.querySelector('input[name="color"]:checked')) {
+        errors.push("Please select your favorite color.");
+      }
+      if (!document.querySelector('input[name="language"]:checked')) {
+        errors.push("Please select your favorite coding language.");
+      }
+      if (!document.querySelector('input[name="subject"]:checked')) {
+        errors.push("Please select your favorite subject.");
+      }
+      if (!document.querySelector('input[name="food"]:checked')) {
+        errors.push("Please select your favorite food.");
+      }
+      if (!document.querySelector('input[name="hobby"]:checked')) {
+        errors.push("Please select at least one hobby.");
+      }
+      if (!document.querySelector('input[name="device"]:checked')) {
+        errors.push("Please select at least one preferred device.");
+      }
+
+      if (errors.length > 0) {
+        event.preventDefault();
+        document.getElementById("errorMessages").innerHTML = errors.join("<br>");
+      }
+    });
+  </script>
+</body>
+</html>
